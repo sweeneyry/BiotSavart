@@ -10,6 +10,7 @@ import numpy as np
 from copy import deepcopy
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+import pdb
 
 class Wire:
     '''
@@ -26,7 +27,7 @@ class Wire:
         self.current = current
         self.path = path
         self.discretization_length = discretization_length
-        self.discretized_path()
+        self.dpath = self.discretized_path()
 
 
     def discretized_path(self):
@@ -76,7 +77,7 @@ class Wire:
 
         '''
         
-
+        # pdb.set_trace()
         mu0 = 4e-7*np.pi
         
         dl = self.dpath[1:,:] - self.dpath[0:-1,:] # 1x3 array, dl in Biotsavart law
